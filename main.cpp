@@ -374,7 +374,7 @@ int main(int argc, char** argv) {
     int option;
     try { option = std::stoi(argv[1]); }
     catch (...) {
-        print_usage();
+        print_usage(argv[0]);
         return 1;
     }
 
@@ -383,7 +383,7 @@ int main(int argc, char** argv) {
     case 1: return encoded_video();
     case 2: return play_audio();
     case 3: return record_audio();
-    default: print_usage();
+    default: print_usage(argv[0]);
     }
 
     return 0;
